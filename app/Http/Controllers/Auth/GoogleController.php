@@ -20,7 +20,7 @@ class GoogleController extends Controller
 
     public function handleGoogleCallback() 
     {
-        $user = Socialite::driver('google')->stateless()->user();
+        $user = Socialite::driver('google')->user();
         $this->_registerOrLoginUser($user);
         return redirect()->intended('dashboard');
     }
